@@ -1,0 +1,9 @@
+
+<form (ngSubmit)="createTodo(title)" #addTodoForm="ngForm">
+    <label>
+      Title:
+      <input type="text" [(ngModel)]="title" name="title" required>
+    </label>
+    <button type="submit" [disabled]="!addTodoForm.form.valid">Create Todo</button>
+  </form>
+  

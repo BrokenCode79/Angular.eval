@@ -1,0 +1,15 @@
+<main>
+  <section class="todo-list">
+    <div class="todo-card" *ngFor="let todo of todos">
+      <input type="checkbox" [(ngModel)]="todo.isCompleted" (click)="toggleTodo(todo)">
+      <p [ngClass]="{ 'completed': todo.isCompleted }">{{ todo.text }}</p>
+      <button class="todo-remove" (click)="removeTodo(todo)">
+        <span class="material-symbols-outlined"> delete </span>
+      </button>
+    </div>
+  </section>
+  <section class="todo-actions">
+    <input [(ngModel)]="newTodo" placeholder="Ajouter un todo">
+    <button (click)="addTodo(newTodo)">Ajouter</button>
+  </section>
+</main>
